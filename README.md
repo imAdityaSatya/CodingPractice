@@ -1,1 +1,1 @@
-This repo contains problems that I practiced for coding rounds. It is quite random and diverse with coding problems ranging from the easiest to the toughest. Or maybe not that tough, but certainly easy for sure.
+This repo contains problems that I practiced for coding rounds. It is quite random and diverse with coding problems ranging from the easiest to the toughest. Or maybe not that toughest, but certainly easy for sure.
