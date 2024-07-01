@@ -13,22 +13,41 @@
  * Explanation: The 2 lines with heights 8 and 7 together form the container with the most water, holding 49 water units.
  */
 
-public class ContainerMostWater {
-    public static int bruteFunction(int[] height) {
+ public class ContainerMostWater {
+    public static int bruteFunction(int height[]) {
         int maxArea = 0;
         int n = height.length;
-        for (int i = 0; i < n; i++) {
-            for (int j = i + 1; j < n; j++) {
-                int area = Math.min(height[i], height[j]) * (j - i);
+        for(int i=0; i<n; i++) {
+            for(int j=i+1; j<n; j++) {
+                int area = Math.min(height[i], height[j]) * (j-i);
                 maxArea = Math.max(maxArea, area);
             }
         }
         return maxArea;
     }
 
-    public static void main(String args[]){
+    public static int optFunction(int height[]) {
+        int maxArea = 0;
+        int left = 0;
+        int right = (height.length)-1;
+        while(left < right) {
+            int area = Math.min(height[left], height[right]) * (right-left);
+            maxArea = Math.max(maxArea, area);
+            if(height[left] < height[right]) {
+                left++;
+            }
+            else {
+                right--;
+            }
+        }
+        return maxArea;
+    }
+
+    public static void main(String[] args){
         int[] height = {1,8,6,2,5,4,8,3,7};
-        System.out.println(bruteFunction(height));
+        // System.out.println(bruteFunction(height));
+        System.out.println(optFunction(height));
+
     }
     
 }
